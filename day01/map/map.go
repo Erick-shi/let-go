@@ -7,6 +7,14 @@ map 可以理解为py中的字典，即k:v格式的数据类型
 */
 func main() {
 	//define a map; map[key类型]v类型{}
+	//声明一个空map
+	User := map[string]string{}
+	fmt.Println(User) //map[]
+	//使用make 声明一个map
+	User2 := make(map[string]string)
+	fmt.Println(User2) //[]map
+	User2["name"] = "erick"
+	fmt.Println(User2)
 	userInfo := map[string]string{
 		"username":     "erick",
 		"home address": "bj",
@@ -18,11 +26,13 @@ func main() {
 	//添加数据
 	map1["age"] = 18
 	map1["salary"] = 10000
-	fmt.Println(map1)
+	fmt.Println(map1, "-----")
 	// 判断某个值是否存在
-	v, ok := userInfo["username"]
+	v, ok := userInfo["username1"]
 	if ok {
 		println(v)
+	} else {
+		println("这没有username1这个key")
 	}
 	// 删除map 或者key,用法delete(map 对象，key)
 	delete(userInfo, "username")
