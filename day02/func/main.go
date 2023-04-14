@@ -51,7 +51,15 @@ func Func7(x int, b int) (xx int, yy int) {
 	return
 }
 
+//匿名函数，匿名函数没有名称，多用于并发可以防止被外部胡乱调用。注意要在main 中定义！！！
+
 func main() {
+	f := func(x, y int) int {
+		return x + y
+	}
+
+	// 调用匿名函数并输出结果
+	fmt.Println(f(3, 4))
 	Func1()
 	// 调用Func2
 	name := "erick"
