@@ -5,6 +5,12 @@ import "fmt"
 func main() {
 	var list1 []string //声明一个空切片
 	fmt.Println(list1) //返回值[]
+	//第一种声明切片的方法, make 声明 make([]init(类型)，10 长度)注意这个10这个长度是可变的
+	var x = make([]int, 0)
+	x = append(x, 1, 2, 3, 4111)
+	fmt.Println(x)
+	x = append(x, []int{5, 6, 8}...)
+	fmt.Println(x)
 	//声明一个切片,并且赋值
 	var list2 = []int{1, 2, 3, 4, 5, 6, 7, 8}
 	fmt.Println(list2) // [1 2 3 4 5 6 7 8]
